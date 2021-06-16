@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test Document Object Model</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+function openNav() {
+    document.getElementById("sideNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("sideNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+}
+</script>
+<script src="cwd.js"></script>
+
+</head>
+
+<body>
+    <div id="sideNavigation" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">A propos</a>
+        <a href="#">Contenu</a>
+        <a href="#">Contact</a>
+    </div>
+    <nav class="topnav">
+        <a href="#" onclick="openNav()">
+            <svg width="30" height="30" id="icoOpen">
+                <path d="M0,5 30,5" stroke="#000" stroke-width="5" />
+                <path d="M0,14 30,14" stroke="#000" stroke-width="5" />
+                <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
+            </svg>
+        </a>
+    </nav>
+    <div id="main">
+        <div class="page-header">
+            <h1>LE GRETA</h1>
+
+            <p>Aujourd'hui au Greta il fait
+            <span id="spantemp">???</span>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="https://www1.ac-lyon.fr/greta/loire" class="thumbnail"><img src="LOGO GRETA CFA loire.jpg"
+                        width="300px" /></a>
+            </div>
+        </div>
+        <div style="width:200px; float:left; margin: 10px;">
+            <p>Le koala (Phascolarctos cinereus), appelé aussi Paresseux australien, est une espèce de marsupial
+                arboricole herbivore
+                endémique d'Australie et le seul représentant encore vivant de la famille des Phascolarctidés. On le
+                trouve dans les
+                régions côtières de l'Australie-Méridionale et orientale, d'Adélaïde à la partie sud de la péninsule du
+                cap York.</p>
+        </div>
+
+
+        <div style="width:200px; float:left; margin: 10px;">
+            <p>Les populations s'étendent aussi sur des distances considérables dans l'arrière-pays australien
+                (outback), là où l'humidité
+                est suffisante pour le maintien de forêts. Les koalas d'Australie-Méridionale furent exterminés au début
+                du xxe siècle,
+                mais cet État fédéré a depuis été repeuplé grâce à des transferts du Victoria. Cet animal n'était plus
+                présent ni en
+                Tasmanie, ni en Australie-Occidentale, mais il y a été réintroduit.</p>
+        </div>
+
+
+        <div style="width:200px; float:left; margin: 10px;">
+            <p>C'est, avec le kangourou, l'un des principaux symboles de l'Australie. Après avoir été chassé massivement
+                pour sa
+                fourrure, il est aujourd'hui principalement menacé par la fragilité et le recul de son biotope. Il reste
+                moins de 80 000
+                koalas vivant en liberté et ce nombre continue de décliner. Les koalas disparaissent à cause des menaces
+                qui pèsent sur
+                leur habitat et des vagues de chaleur dues au réchauffement climatique3. Ils ont ainsi perdu 80 % de
+                leur habitat
+                nature.</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
