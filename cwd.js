@@ -23,6 +23,7 @@ function mainLoop(){
 // Recherche sur l'API des sugestions correspondant à la saisie dans le champ input
 function callTemperature(){
     var temp = 0;
+    var token = "--TOKEN--"
 
   // Annule une precedente requete si elle n'avait pas ete terminee
   if(_xmlHttp&&_xmlHttp.readyState!=0){
@@ -34,7 +35,7 @@ function callTemperature(){
 
   if(_xmlHttp){
 //    console.log('appel='+valeur);
-    _xmlHttp.open("GET","http://api.openweathermap.org/data/2.5/weather?lat=45.41315&lon=4.3866&appid=4df8bb269b43bab6048cd92d3ab387bd&units=metric",true);
+    _xmlHttp.open("GET","http://api.openweathermap.org/data/2.5/weather?lat=45.41315&lon=4.3866&appid="+token+"&units=metric",true);
     // gestionnaire d'evenement pour readystate
     // Fonction anonyme de callback quand readystate change de valeur
     _xmlHttp.onreadystatechange=function() {
