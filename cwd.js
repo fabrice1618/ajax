@@ -1,27 +1,33 @@
 
 var _xmlHttp = null; //l'objet xmlHttpRequest utilisé pour contacter le serveur
 var _spantemp = null;
+var tempfab = null;
 
 // Fonction executee au moment du chargement de la page
 window.onload = function(){
     _spantemp = document.getElementById('spantemp');
 
-    mainLoop();
+    lireTemperature();
 }
 
 // tourne en permanence pour suggérer suite à un changement du champ texte
-function mainLoop(){
+function lireTemperature(){
 
-    temp = callTemperature();
+    callAPI();
 
-    console.log(temp);
+    if (tempfab) {
+//      console.log("temperature = " + tempfab);
+      _spantemp.innerText = tempfab + ' °C';
+    }
+    
 
-  setTimeout("mainLoop()",20000); // la fonction mainLoop() se redéclenchera dans 200 ms
+  setTimeout("lireTemperature()",200000); // la fonction lireTemperature() se redéclenchera dans 20 s
   return true
 }
 
-// Recherche sur l'API des sugestions correspondant à la saisie dans le champ input
-function callTemperature(){
+function callAPI(){
+  // promise
+  // Async/await
     var temp = 0;
     var token = "--TOKEN--"
 
@@ -45,14 +51,15 @@ function callTemperature(){
 
           // Decodage resultat json et stockage dans un tableau javascript
           var meteo = JSON.parse(_xmlHttp.responseText);
-          console.log(meteo);
+//          console.log(meteo['main']['temp']);
+          tempfab = meteo['main']['temp'];
       }
     };
     // envoi de la requête
     _xmlHttp.send(null)
   }
 
-  return(temp);
+  return(true);
 }
 
 
